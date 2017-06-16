@@ -92,4 +92,13 @@ alias netres="sudo systemctl restart NetworkManager.service"
 alias octave="octave --no-gui"
 alias vim="~/vim/src/vim"
 alias R="R -q"
-alias emacs="emacs -nw"
+alias ipe="~/Downloads/ipe-7.2.7-x86_64.AppImage"
+alias o="xdg-open"
+source <(kubectl completion zsh)
+
+export PATH=$PATH:/usr/local/go/bin
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi

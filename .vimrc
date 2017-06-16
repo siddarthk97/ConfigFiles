@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'scrooloose/nerdtree' , {'on': 'NERDTreeToggle'}
 Plugin 'flazz/vim-colorschemes'
+Plugin 'lervag/vimtex'
 call vundle#end()
 filetype plugin indent on
 set tabstop=4
@@ -124,6 +125,7 @@ set t_Co=256
 packadd matchit
 
 set nu
+set rnu
 
 set ambiwidth=single
 
