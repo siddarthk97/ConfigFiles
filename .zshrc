@@ -24,13 +24,13 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -85,15 +85,17 @@ source $ZSH/oh-my-zsh.sh
 #
 alias binary-ninja="~/Downloads/binaryninja/binaryninja"
 
-#fixing unity control centre
+# fixing unity control centre
 export XDG_CURRENT_DESKTOP=Unity
 
+# Aliases for some frequently used commands
 alias netres="sudo systemctl restart NetworkManager.service"
 alias octave="octave --no-gui"
 alias vim="~/vim/src/vim"
 alias R="R -q"
 alias ipe="~/Downloads/ipe-7.2.7-x86_64.AppImage"
 alias o="xdg-open"
+
 source <(kubectl completion zsh)
 
 export PATH=$PATH:/usr/local/go/bin
@@ -102,3 +104,16 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
+
+# Miniconda3 4.3.14
+export PATH="/home/siddarth/miniconda3/bin:$PATH"
+
+# support for libcudnn
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+
+# Spaceship theme for zsh
+source "/home/siddarth/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# For LEDA
+export LEDAROOT="home/siddarth/LEDA"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/siddarth/LEDA"

@@ -15,6 +15,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'scrooloose/nerdtree' , {'on': 'NERDTreeToggle'}
 Plugin 'flazz/vim-colorschemes'
 Plugin 'lervag/vimtex'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 filetype plugin indent on
 set tabstop=4
