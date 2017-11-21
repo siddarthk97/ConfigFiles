@@ -3,3 +3,4 @@ zshrc
 i3_config
 emacs.d
 src/bgpics
+tmux.conf
