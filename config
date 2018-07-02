@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $PASSWORD "<ENTER PASSWORD HERE>" # HUUUUGE hack
+set $PASSWORD "<ENTER_PASSWORD_HERE>"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,10 +32,12 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec urxvt
 
 # gaps
-gaps inner 5
-gaps outer 5
+#for_window [class="^.*"] border pixel 0
+#gaps inner 5
+#gaps outer 5
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -99,10 +101,10 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 set $thunderbird "2: "
-set $tag1 "1: "
+set $tag1 "1: "
 set $tag9 "9: "
-set $tag3 "3: "
-set $tag4 number 4
+set $tag3 "3: "
+set $tag4 "4: "
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $thunderbird
 bindsym $mod+3 workspace $tag3
@@ -132,6 +134,14 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# hide top border for firefox, chrome, thunderbird and VLC
+new_window normal
+hide_edge_borders vertical
+for_window [class="Thunderbird"] border pixel 0
+for_window [class="Google-chrome"] border pixel 0
+for_window [class="Firefox"] border pixel 0
+for_window [class="Vlc"] border pixel 0
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -191,7 +201,7 @@ bar {
 
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id compton -cCGfF -b -i 0.85 --vsync opengl
+#exec --no-startup-id compton -cCGfF -b -i 0.85 --vsync opengl
 #exec --no-startup-id xsetroot -solid "#333333"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ 
