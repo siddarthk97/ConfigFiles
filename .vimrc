@@ -118,7 +118,7 @@ endif
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+"set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
