@@ -19,6 +19,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dylanaraps/wal'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call vundle#end()
 filetype plugin indent on
 set tabstop=4
@@ -170,3 +171,5 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+" FZF

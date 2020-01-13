@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="evan"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,5 +107,18 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/home/ks1d/miniconda3/bin"
 . /home/ks1d/miniconda3/etc/profile.d/conda.sh
 
+# Forward and backward in shell
+bindkey "5C" forward-word
+bindkey "5D" backward-word
+
 # ZSH Syntax highlighting
 source /home/ks1d/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+ # FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+se() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
