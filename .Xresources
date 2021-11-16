@@ -1,0 +1,41 @@
+URxvt.*font: 			        xft:dejavu sans mono for powerline:size=16:antialias=true, \
+                          xft:source code pro for powerline:size=16:antialias=true
+URxvt.*boldFont: 			    xft:dejavu sans mono for powerline:bold:size=16:antialias=true
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+URxvt*termName:                 rxvt-256color
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                true
+URxvt*loginShell:               true
+URxvt.internalBorder:           1
+URxvt.perl-ext:	 		        default,matcher,url-select,keyboard-select
+URxvt.perl-ext-common:      clipboard,resize-font
+URxvt.clipboard.autocopy:   true
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-v:           perl:clipboard:paste
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.url-launcher:             firefox
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.matcher.button: 		      1
+
+URxvt.keysym.M-Down:        \033[1;3B
+URxvt.keysym.M-Up:          \033[1;3A
+URxvt.keysym.M-Left:        \033[1;3D
+URxvt.keysym.M-Right:       \033[1;3C
+URxvt.keysym.Shift-Up:      command:\033]720;1\007
+URxvt.keysym.Shift-Down:    command:\033]721;1\007
+
+Xcursor.theme: mac-aqua-cursor
