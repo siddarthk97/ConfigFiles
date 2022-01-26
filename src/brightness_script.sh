@@ -1,7 +1,7 @@
 #!/bin/bash
 
-f1="/sys/class/backlight/intel_backlight/brightness"
-f2="/sys/class/backlight/intel_backlight/max_brightness"
+f1="/sys/class/backlight/amdgpu_bl0/brightness"
+f2="/sys/class/backlight/amdgpu_bl0/max_brightness"
 
 MAX_BRIGHTNESS=$(cat $f2)
 CURR_BRIGHTNESS=$(cat $f1)
