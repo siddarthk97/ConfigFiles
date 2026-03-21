@@ -1,7 +1,8 @@
 #!/bin/bash
+set -euxo pipefail
 
-f1="/sys/class/backlight/amdgpu_bl0/brightness"
-f2="/sys/class/backlight/amdgpu_bl0/max_brightness"
+f1="/sys/class/backlight/amdgpu_bl1/brightness"
+f2="/sys/class/backlight/amdgpu_bl1/max_brightness"
 
 MAX_BRIGHTNESS=$(cat $f2)
 CURR_BRIGHTNESS=$(cat $f1)
