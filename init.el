@@ -89,12 +89,6 @@
   (setq evil-mc-disabled-modes '(dired-mode))
   (add-to-list 'evil-mc-known-commands
              '(wdired--self-insert . ((:default . evil-mc-execute-call)))))
-(dolist (state '(normal visual))
-  (evil-define-key state 'global (kbd "grm") #'evil-mc-make-all-cursors)
-  (evil-define-key state 'global (kbd "grn") #'evil-mc-make-and-goto-next-match)
-  (evil-define-key state 'global (kbd "grp") #'evil-mc-make-and-goto-prev-match)
-  (evil-define-key state 'global (kbd "grq") #'evil-mc-undo-all-cursors)
-  (evil-define-key state 'global (kbd "grh") #'evil-mc-make-cursor-here))
 
 (use-package evil-surround
   :ensure t
@@ -193,7 +187,6 @@
 ;; -------------------------------------------------------------
 ;; YAML mode
 (use-package yaml-mode
-  :ensure t
   :mode ("\\.yml\\'" "\\.yaml\\'"))
 
 ;; PDF Tools
@@ -205,6 +198,12 @@
 ;; Rust mode
 (use-package rust-mode
   :mode ("\\.rs\\'"))
+
+(use-package markdown-mode
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode))
+  :config
+  (setq markdown-fontify-code-blocks-natively t))
 
 ;;; ---------------------------------------------------------------------
 ;;; Keybindings
@@ -221,7 +220,6 @@
     (call-interactively #'find-file)))
 (evil-define-key 'normal 'global (kbd "C-j") #'my/find-file-dwim)
 (evil-define-key 'normal 'global (kbd "C-k") #'switch-to-buffer)
-(evil-define-key 'normal 'global (kbd "C-a") #'project-find-regexp)
 (evil-define-key 'normal 'global (kbd "-")   #'dired-jump)
 ;;; ---------------------------------------------------------------------
 ;;; Mode overrides — MUST come after evil-collection-init
